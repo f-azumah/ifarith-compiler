@@ -115,6 +115,7 @@ got from running the compiler and generating an output.
 The first pass converts the high-level IfArith language into a more restricted subset called IfArith-Tiny. This involves desugaring constructs like let*, and, or, and cond into simpler forms using let, if, and primitive operations.
 Example: (let* ([x 1] [y 2]) (+ x y)) is desugared to (let ([x 1]) (let ([y 2]) (+ x y))).
 
+Answer:
 The next pass transforms the IfArith-Tiny representation into Administrative Normal Form (ANF)to break down complex expressions into simple bindings, making it easier to reason about the control flow.
 Example: (+ (* 2 3) 4) is transformed into (let ([x (* 2 3)]) (let ([y (+ x 4)]) y)).
 
@@ -138,6 +139,7 @@ definition of what an idiom is: think carefully about whether you see
 any pattern in this code that resonates with you from earlier in the
 semester.
 
+Answer
 The code heavily relies on pattern matching, particularly in the ifarith?, ifarith-tiny?, virtual-instr?, and labeled-virtual-instr? functions. Many functions in the project also recursively process data structures, such as the ifarith->ifarith-tiny function, which recursively transforms an IfArith expression into an IfArith-Tiny expression
 
 [ Question 5 ] 
@@ -178,6 +180,7 @@ nuts and bolts of code, try to use this experience as a way to think
 about how you would approach doing group code critique. What would you
 do differently next time, what did you learn?
 
+Answer:
 Working on this project has been an enlightening experience that provided valuable insights into the inner workings of compilers and the challenges involved in their development. One of the most fascinating aspects was the opportunity to observe the step-by-step transformation of a high-level language into low-level machine code through a series of intermediate representations.
 The project was particularly interesting because it allowed me to explore the practical application of many concepts and idioms we discussed throughout the semester, such as pattern matching and recursive data structure processing. Seeing these idioms in action within the context of a real-world problem, like building a compiler, reinforced my understanding and appreciation of their utility. A challenging aspect was the process of identifying potential bugs in the compiler.
 This experience highlighted the importance of thorough testing and the need to consider edge cases and potential pitfalls when developing complex software systems. Overall, this project has been an invaluable learning experience that has deepened my understanding of compilers.
